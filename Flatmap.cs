@@ -76,7 +76,7 @@ public class Flatmap<TKey, TValue>
     public void Add(TKey key, TValue val) {
         // use quadratic probign
         // index = (hash + i^2) % table_size, i = 0 ... until found
-        if (_size >= _capacity / 8 * 9) {
+        if (_size >= _capacity / 10 * 8) {
             resize();
         }
         uint hash = (uint) HashCode.Combine(key);
